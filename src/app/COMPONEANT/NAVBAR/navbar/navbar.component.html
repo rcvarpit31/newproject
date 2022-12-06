@@ -13,12 +13,20 @@
     </div>
     <div class="topnav" color="primary"*ngIf="!deviceXs" fxLayout="row">
       <button  mat-button routerLink="home">Home</button>
-      <button mat-button [matMenuTriggerFor]="afterMenu">Report</button>
+      <button mat-button [matMenuTriggerFor]="afterMenu" class="badge bg-primary  text-white text-wrap">People</button>
       <mat-menu #afterMenu="matMenu" xPosition="after">
-        <button mat-menu-item (click)="navigate('user')"> User</button>
+        <button mat-menu-item  (click)="navigate('user')"> User</button>
         <button mat-menu-item (click)="navigate('report')">Report</button>
       </mat-menu>
-      <button mat-button>Log Out</button>
+      <button class="br" mat-button>Information Repositorys</button>
+      <button mat-button>Device</button>
+      <button mat-button [matMenuTriggerFor]="after">Applications & Services</button>
+      <mat-menu #after="matMenu" xPosition="after">
+        <button mat-menu-item (click)="navigate('failureinfra')">Failover Infra </button>
+        <button mat-menu-item (click)="navigate('monitorimfra')">Monitor Infra</button>
+      </mat-menu>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
+
+

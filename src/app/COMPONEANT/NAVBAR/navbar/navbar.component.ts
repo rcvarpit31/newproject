@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-navbar',
@@ -16,7 +17,7 @@ export class NavbarComponent implements OnInit {
   deviceXs!: boolean;
   navigate(path: string) {
     this.router.navigate([path])
-    // console.log(path);
+    console.log(path);
 
 
   }

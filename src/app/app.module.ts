@@ -14,6 +14,14 @@ import { ReportingComponent } from './COMPONEANT/REPORTING/reporting/reporting.c
 import { UserComponent } from './COMPONEANT/USER/user/user.component';
 import { ReportComponent } from './COMPONEANT/REPORT/report/report.component';
 import { HomeComponent } from './COMPONEANT/HOME/home/home.component'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MonitorInfraComponent } from './COMPONEANT/monitor-infra/monitor-infra.component';
+import { FailureInfraComponent } from './COMPONEANT/failure-infra/failure-infra.component';
+import { FooterComponent } from './COMPONEANT/footer/footer.component';
+import { SidenavComponent } from './COMPONEANT/sidenav/sidenav.component';
+import { NgScrollbarModule } from 'ngx-scrollbar';
+
 
 @NgModule({
   declarations: [
@@ -23,10 +31,16 @@ import { HomeComponent } from './COMPONEANT/HOME/home/home.component'
     UserComponent,
     ReportComponent,
     HomeComponent,
+    MonitorInfraComponent,
+    FailureInfraComponent,
+    FooterComponent,
+    SidenavComponent,
     
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -35,6 +49,8 @@ import { HomeComponent } from './COMPONEANT/HOME/home/home.component'
     FlexLayoutModule,
     MatMenuModule,
     MatButtonModule,
+    NgScrollbarModule,
+
     
     
     

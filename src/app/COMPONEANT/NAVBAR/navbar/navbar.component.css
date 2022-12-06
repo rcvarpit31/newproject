@@ -12,11 +12,7 @@ img {
 height: 50px;
 width: 100px;
 }
-/* body{
-  background-image: url('../../../../img/pexels-hoang-le-1042423.jpg') ;
-  background-size: cover;
-  cursor: pointer;
-} */
+
 .profile {
   cursor: pointer;
   margin-top: 10px;
@@ -30,4 +26,7 @@ width: 100px;
 .home-icon{
   cursor: pointer;
   vertical-align: bottom;
+}
+
+.br{
 }

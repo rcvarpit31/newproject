@@ -1,0 +1,59 @@
+<!-- <div class="container   ">
+    <div class="card w-75" *ngFor="let data of monitorInfradata"
+     [ngStyle]="{'color':data.helth === 'ok' ? 'green' : 'red',
+     'border-color':data.helth === 'ok' ? 'green' : 'red'  }" >
+        <h5 class="card-header fs-4">{{data.appname}}</h5>
+        <div class="card-body"> 
+            <div class="row">
+                <div class="col-sm-3">
+                    <div>
+                        <h5 class=" fs-6"> Status: {{data.description}}</h5>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div>
+                        <h5 class=" fs-6  text-end"> Health: {{data.helth}}</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> -->
+
+
+    <div>
+        <div class="">
+          <div class="row">
+            <div class="col-md-2" >
+            <app-sidenav></app-sidenav>
+            </div>
+            <div class="col-md-10">
+                <div class="container   ">
+                    <div class="card w-75" *ngFor="let data of monitorInfradata"
+                     [ngStyle]="{'color':data.helth === 'ok' ? 'green' : 'red',
+                     'border-color':data.helth === 'ok' ? 'green' : 'red'  }" >
+                        <h5 class="card-header fs-4">{{data.appname}}</h5>
+                        <div class="card-body"> 
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div>
+                                        <h5 class=" fs-6"> Status: {{data.description}}</h5>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div>
+                                        <h5 class=" fs-6  text-end"> Health: {{data.helth}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+        

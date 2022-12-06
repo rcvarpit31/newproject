@@ -1,0 +1,37 @@
+<!-- <div class="top">
+    <div class="row">
+        <div class="col-sm-2"*ngFor="let data of failoverInfradata"
+        [ngStyle]="{'color':data.helth === 'ok' ? 'green' : 'red'}">
+          <div class="card">
+            <div class="card-header fs-6 text-bolder">
+              {{data.appname}}<div class="text-end">{{data.helth}}</div> </div>
+            <div class="card-body">
+              <h5 class="card-title "> {{data.description}} </h5>
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+      <div>
+        <div class=" ">
+          <div class="row">
+            <div class="col-md-2" >
+              <app-sidenav></app-sidenav>
+            </div>
+            <div class="col-md-10">
+              <div class="top">
+                <div class="row">
+                    <div class="col-sm-2"*ngFor="let data of failoverInfradata"
+                    [ngStyle]="{'color':data.helth === 'ok' ? 'green' : 'red'}">
+                      <div class="card">
+                        <div class="card-header fs-6 text-bolder">
+                          {{data.appname}}<div class="text-end">{{data.helth}}</div> </div>
+                        <div class="card-body">
+                          <h5 class="card-title "> {{data.description}} </h5>
+                        </div>
+                      </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>

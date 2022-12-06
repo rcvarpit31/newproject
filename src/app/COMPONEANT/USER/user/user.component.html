@@ -1,124 +1,353 @@
-
+<!-- <section>
     <div class="container">
-        <form class="row g-3  mt-5">
-            <div class="col-md-6 " >
-            <label for="empcode" class="form-label">Emp Code</label>
-            <input type="email" class="form-control" name="empcode">
+        <form class="row g-3  mt-5" [formGroup]="empGroup" (ngSubmit)="onSubmit(empGroup)">
+            <div class="col-md-6">
+                <label for="empcode" class="form-label">Emp Code</label>
+                <input type="email" class="form-control" formControlName="empcode">
             </div>
             <div class="col-md-6">
-            <label  class="form-label">Employee Name</label>
-            <input type="text" class="form-control" name="empname">
+                <label class="form-label">Employee Name</label>
+                <input type="text" class="form-control" formControlName="employeename">
             </div>
-            <div class="col-md-6 " >
-                <label  class="form-label">Mobile Number</label>
-                <input type="number" class="form-control" name="mobilenum">
+            <div class="col-md-6 ">
+                <label class="form-label">Mobile Number</label>
+                <input type="number" class="form-control" formControlName="mobileno">
+            </div>
+            <div class="col-md-6">
+                <label for="inputState" class="form-label">Designation</label>
+                <select id="inputState"  formControlName="designation" class="form-select">
+                    <option  value="null" selected>Choose...</option>
+                    <option value="TeamManager">TeamManager</option>
+                    <option value="Project Manager">Project Manager</option>
+                </select>
+            </div>
+            <div class="col-md-6 ">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email">
+            </div>
+            <div class="col-md-6">
+                <label for="inputState" class="form-label">Reporting To</label>
+                <select formControlName="reportinto" class="form-select">
+                    <option value="null" selected>Choose...</option>
+                    <option value="Teamleader"> Teamleader</option>
+                    <option value="Project Manager">Project Manager</option>
+                </select>
+                
+            </div>
+            
+            <fieldset>
+                <legend class="col-form-label ">Status</legend>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="True" 
+                    formControlName="status">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Active
+                    </label>
                 </div>
-                <div class="col-md-6">
-                    <label for="inputState" class="form-label">Designation</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>Teamleader</option>
-                        <option>Project Manager</option>
-                    </select>
-                    </div>
-                    <div class="col-md-6 " >
-                        <label  class="form-label">Email</label>
-                        <input type="email" class="form-control" name="email">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="inputState" class="form-label">Reporting To</label>
-                            <select id="inputState" class="form-select">
-                                <option selected>Choose...</option>
-                                <option>Teamleader</option>
-                                <option>Project Manager</option>
-                            </select>
-                            </div>
-                            <fieldset >
-                                <legend class="col-form-label ">Status</legend>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                    Active
-                                    </label>
-                                  </div>
-                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                    <label class="form-check-label" for="flexRadioDefault2">
-                                    In Active
-                                    </label>
-                                </div>
-                              </fieldset>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" value="False" formControlName="status" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        In Active
+                    </label>
+                </div>
+            </fieldset>
             <div class="col-12">
-            <label for="inputAddress2" class="form-label">Reason</label>
-            <input type="text" class="form-control" name="reson">
+                <label for="inputAddress2" class="form-label">Reason</label>
+                <input type="text" class="form-control" formControlName="reason">
             </div>
+
             <div class="col-1">
-            <button type="submit" class="btn btn-primary">Add</button>
+                <button type="submit" class="btn btn-primary">Add</button>
             </div>
             <div class="col-1">
                 <button type="submit" class="btn btn-primary">Clear</button>
-                </div>
+            </div>
+            
         </form>
-        <div class="container-fluid mt-4" >
+        
+        
+        <div class="container-fluid mt-4">
             <form class="d-flex">
-              <!-- <input class="form-control col-md-6 me-2" type="search" placeholder="Search" >
-              <button class="btn btn-outline-success" type="submit">Search</button> -->
-              <div class="col-md-4 " >
-                <input class="form-control" type="search" placeholder="Emp Code" >
+                <div class="col-md-4 ">
+                    <input class="form-control" type="search" placeholder="Emp Code">
                 </div>
                 <div class="col-md-4 d-flex ">
-                <input class="form-control col-md-6 me-2" type="search" placeholder="Employee Name">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+                    <input class="form-control col-md-6 me-2" type="search" placeholder="Employee Name">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
 
                 </div>
             </form>
-          </div>
+            
+        </div>
+        
     </div>
+</section>
     <div class="container mt-3">
-    <table class="table  table-hover table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Sr No.</th>
-            <th scope="col">Emp Code</th>
-            <th scope="col">Employee Name</th>
-            <th scope="col">Mobile No.</th>
-            <th scope="col">Designation</th>
-            <th scope="col">Email</th>
-            <th scope="col">Reporting To</th>
-            <th scope="col">Edit</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry the Bird</td>
-            <td>@twitter</td>
-            <td>@whatsapp</td>
-            <td>@mdo</td>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </table>
+        <table class="table  table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sr No.</th>
+                    <th scope="col">Emp Code</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Mobile No.</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Reporting To</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let data of employeeData" >
+                    <th scope="row">{{data.id}}</th>
+                    <td>{{data.empcode}}</td>
+                    <td>{{data.employeename}}</td>
+                    <td>{{data.mobileno}}</td>
+                    <td>{{data.designation}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.reportinto}}</td>
+                    <td>{{data.status}}</td>
+                    <td><i (click)="deleteData(data.id)" class="fs-4 bi bi-trash3 text-danger"></i></td>
+                    <td><i class=" fs-4 bi bi-pencil-square text-primary"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div> -->
+<!-- 
+  <div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9" >
+            <form class="row g-3  mt-5" [formGroup]="empGroup" (ngSubmit)="onSubmit(empGroup)">
+                <div class="col-md-6">
+                    <label for="empcode" class="form-label">Emp Code</label>
+                    <input type="email" class="form-control" formControlName="empcode">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Employee Name</label>
+                    <input type="text" class="form-control" formControlName="employeename">
+                </div>
+                <div class="col-md-6 ">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="number" class="form-control" formControlName="mobileno">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Designation</label>
+                    <select id="inputState"  formControlName="designation" class="form-select">
+                        <option  value="null" selected>Choose...</option>
+                        <option value="TeamManager">TeamManager</option>
+                        <option value="Project Manager">Project Manager</option>
+                    </select>
+                </div>
+                <div class="col-md-6 ">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Reporting To</label>
+                    <select formControlName="reportinto" class="form-select">
+                        <option value="null" selected>Choose...</option>
+                        <option value="Teamleader"> Teamleader</option>
+                        <option value="Project Manager">Project Manager</option>
+                    </select>
+                    
+                </div>
+                
+                <fieldset>
+                    <legend class="col-form-label ">Status</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="True" 
+                        formControlName="status">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Active
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="False" formControlName="status" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            In Active
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Reason</label>
+                    <input type="text" class="form-control" formControlName="reason">
+                </div>
+    
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary">Clear</button>
+                </div>
+                
+            </form>
+             <div class="container-fluid mt-4">
+            <form class="d-flex">
+                <div class="col-md-4 ">
+                    <input class="form-control" type="search" placeholder="Emp Code">
+                </div>
+                <div class="col-md-4 d-flex ">
+                    <input class="form-control col-md-6 me-2" type="search" placeholder="Employee Name">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+
+                </div>
+            </form>
+            
+        </div>
+        
+        <table class="table  table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sr No.</th>
+                    <th scope="col">Emp Code</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Mobile No.</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Reporting To</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody >7tyugh
+                <tr *ngFor="let data of employeeData" >
+                    <th scope="row">{{data.id}}</th>
+                    <td>{{data.empcode}}</td>
+                    <td>{{data.employeename}}</td>
+                    <td>{{data.mobileno}}</td>
+                    <td>{{data.designation}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.reportinto}}</td>
+                    <td>{{data.status}}</td>
+                    <td><i (click)="deleteData(data.id)" class="fs-4 bi bi-trash3 text-danger"></i></td>
+                    <td><i class=" fs-4 bi bi-pencil-square text-primary"></i></td>
+                </tr>
+            </tbody>
+        </table>
+          
+        </div>
+        <div class="col-md-2 kk">
+  <app-sidenav></app-sidenav>
+
+        </div>
+      </div>
     </div>
+  </div> -->
+      <div class=" ">
+    <div class="">
+      <div class="row">
+        <div class="col-md-2 ms-5" >
+  <app-sidenav></app-sidenav>
+        </div>
+        <div class="col-md-9 mt-5 shadow-sm p-3 mb-5 bg-body rounded" >
+                    <form class="row g-3  " [formGroup]="empGroup" (ngSubmit)="onSubmit(empGroup)">
+                <div class="col-md-6">
+                    <label for="empcode" class="form-label">Emp Code</label>
+                    <input type="email" class="form-control" formControlName="empcode">
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Employee Name</label>
+                    <input type="text" class="form-control" formControlName="employeename">
+                </div>
+                <div class="col-md-6 ">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="number" class="form-control" formControlName="mobileno">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Designation</label>
+                    <select id="inputState"  formControlName="designation" class="form-select">
+                        <option  value="null" selected>Choose...</option>
+                        <option value="TeamManager">TeamManager</option>
+                        <option value="Project Manager">Project Manager</option>
+                    </select>
+                </div>
+                <div class="col-md-6 ">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputState" class="form-label">Reporting To</label>
+                    <select formControlName="reportinto" class="form-select">
+                        <option value="null" selected>Choose...</option>
+                        <option value="Teamleader"> Teamleader</option>
+                        <option value="Project Manager">Project Manager</option>
+                    </select>
+                    
+                </div>
+                
+                <fieldset>
+                    <legend class="col-form-label ">Status</legend>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="True" 
+                        formControlName="status">
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Active
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" value="False" formControlName="status" checked>
+                        <label class="form-check-label" for="flexRadioDefault2">
+                            In Active
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="col-12">
+                    <label for="inputAddress2" class="form-label">Reason</label>
+                    <input type="text" class="form-control" formControlName="reason">
+                </div>
+    
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </div>
+                <div class="col-1">
+                    <button type="submit" class="btn btn-primary">Clear</button>
+                </div>
+                
+            </form>
+             <div class="container-fluid mt-4">
+            <form class="d-flex">
+                <div class="col-md-4 ">
+                    <input class="form-control" type="search" placeholder="Emp Code">
+                </div>
+                <div class="col-md-4 d-flex ">
+                    <input class="form-control col-md-6 me-2" type="search" placeholder="Employee Name">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+
+                </div>
+            </form>
+            
+        </div>
+        
+        <table class="table  table-hover table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Sr No.</th>
+                    <th scope="col">Emp Code</th>
+                    <th scope="col">Employee Name</th>
+                    <th scope="col">Mobile No.</th>
+                    <th scope="col">Designation</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Reporting To</th>
+                    <th scope="col">Status</th>
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let data of employeeData" >
+                    <th scope="row">{{data.id}}</th>
+                    <td>{{data.empcode}}</td>
+                    <td>{{data.employeename}}</td>
+                    <td>{{data.mobileno}}</td>
+                    <td>{{data.designation}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.reportinto}}</td>
+                    <td>{{data.status}}</td>
+                    <td><i (click)="deleteData(data.id)" class="fs-4 bi bi-trash3 text-danger"></i></td>
+                    <td><i class=" fs-4 bi bi-pencil-square text-primary"></i></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+      </div>
+    </div>
+  </div>
+     
