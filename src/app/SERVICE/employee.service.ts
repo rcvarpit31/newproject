@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { EmployeeModule } from '../MODEL/employee/employee.module';
 import { MonitorinfraModule } from '../MODEL/monitorinfra/monitorinfra.module';
-const baseUrl = 'http://localhost:9031/api/employee';
-const baseUrl2 = 'http://localhost:9031/api';
+const baseUrl = 'http://192.168.100.47:9031/api/employee';
+const baseUrl2 = 'http://192.168.100.47:9031/api';
 
 @Injectable({
   providedIn: 'root'
 })
-export class EmployeeService {
+export class EmployeeService {  
   constructor(private http: HttpClient) { }
  // retrive all data from database
   public getAll(): Observable<EmployeeModule[]> {
@@ -56,6 +56,12 @@ export class EmployeeService {
   return this.http.get<MonitorinfraModule>(baseUrl2+"/failoverinfra/fail");
 
  }
+
+ // get data from failoverInfratask failoverinfraTask {controller}
+ public getDataFromFailoverInfraTask():Observable<any>{
+  return this.http.get<MonitorinfraModule>(baseUrl2+"/failoverinfrataks/infratask");
+ }
+
 
 }
 // arpitsingh@thinkcloud.in

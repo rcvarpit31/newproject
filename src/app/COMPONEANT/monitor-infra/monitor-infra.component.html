@@ -1,40 +1,61 @@
-<!-- <div class="container   ">
-    <div class="card w-75" *ngFor="let data of monitorInfradata"
-     [ngStyle]="{'color':data.helth === 'ok' ? 'green' : 'red',
-     'border-color':data.helth === 'ok' ? 'green' : 'red'  }" >
-        <h5 class="card-header fs-4">{{data.appname}}</h5>
-        <div class="card-body"> 
-            <div class="row">
-                <div class="col-sm-3">
-                    <div>
-                        <h5 class=" fs-6"> Status: {{data.description}}</h5>
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div>
-                        <h5 class=" fs-6  text-end"> Health: {{data.helth}}</h5>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div> -->
-
-
     <div>
         <div class="">
           <div class="row">
-            <div class="col-md-2" >
-            <app-sidenav></app-sidenav>
+            <div class="col-md-2 col-3" >
+                <ng-scrollbar  class="bg-secondary text-white" style="height:700px;" class="kk  shadow p-3 mb-5 bg-body rounded  ms-3 text-center text-white ">
+           <div  class=" marigin fw-bolder text-center  mt-4" >
+             <!-- <button class="btn bg-secondary text-white" (click)="navigate('People')">User</button> <br>
+             <button class="btn" (click)="navigate('People')">Report</button> -->
+            <button class="btn btn-outline-secondary  ps-5 mb-2" (click)="navigate('failover')" >Failover</button>
+            <br/>
+             <button class=" btn btn-outline-secondary ps-4 mb-2"(click)="navigate('monitorimfra')"  >Monitor DC</button>
+             <br/>
+             <button class="btn btn-outline-secondary ps-4 mb-2 " (click)="navigate('failureinfra')" >Failover DC</button>
+               </div>
+               
+             </ng-scrollbar>
+             <!-- <app-sidenav> </app-sidenav> -->
             </div>
-            <div class="col-md-10">
-                <div class="container   ">
-                    <div class="card w-75" *ngFor="let data of monitorInfradata"
-                     [ngStyle]="{'color':data.helth === 'ok' ? 'green' : 'red',
-                     'border-color':data.helth === 'ok' ? 'green' : 'red'  }" >
-                        <h5 class="card-header fs-4">{{data.appname}}</h5>
-                        <div class="card-body"> 
+            <div class="col-md-10 col-9">
+                <div class="top">
+                  <button class="btn btn-primary as float-right" (click)="refresh()">Refresh</button>
+        
+                  <div class="row mt-3 ">
+        
+                    <div class="col-md-6 col-lg-4 " *ngFor="let data of monitorInfradata" [ngClass]="getClassOf(data.helth)">
+                      <div class="card">
+                         <div class="card-header fs-5">
+                             {{data.appname}}
+                         </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="">
+                                    <div>
+                                        <h5 class=" fs-6"> Status: {{data.description}}</h5>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <div>
+                                        <h5 class=" fs-6  text-end"> Health: {{data.helth}}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>  
+                 
+                </div>
+              </div>
+            </div>
+            <!-- <div class="col-md-10">
+                <div class="row ms-3 ">  
+                    <button class="btn btn-primary as float-right"  (click)="refresh()">Refresh</button>
+                    <div class="card col-md-5  " *ngFor="let data of monitorInfradata" [ngClass]="getClassOf(data.helth)">
+                        <h5 class="card-header fs-4">{{data.appname}}</h5> 
+                        <div class="card-body   "> 
                             <div class="row">
                                 <div class="col-sm-3">
                                     <div>
@@ -51,9 +72,9 @@
                         </div>
                     </div>
                 </div>
-                
+                 
             </div>
           </div>
         </div>
       </div>
-        
+         -->

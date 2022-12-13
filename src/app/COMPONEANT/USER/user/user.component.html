@@ -236,10 +236,22 @@
       <div class=" ">
     <div class="">
       <div class="row">
-        <div class="col-md-2 ms-5" >
-  <app-sidenav></app-sidenav>
+        <div class="col-sm-2">
+            <ng-scrollbar  class="bg-secondary text-white" style="height:700px;" class="kk  shadow p-3 mb-5 bg-body rounded  ms-3 text-center text-white ">
+                <div  class=" marigin fw-bolder text-center  mt-4" >
+                  <button class="btn btn-outline-secondary ps-4 mb-2" (click)="navigate('People')">User</button> <br>
+                  <button class=" btn btn-outline-secondary" (click)="navigate('People')">Report</button>
+                 <!-- <button class="btn btn-outline-secondary  ps-5 mb-2" (click)="navigate('failover')" >Failover</button>
+                 <br/>
+                  <button class=" btn btn-outline-secondary ps-4 mb-2"(click)="navigate('monitorimfra')"  >Monitor DC</button>
+                  <br/>
+                  <button class="btn btn-outline-secondary ps-4 mb-2 " (click)="navigate('failureinfra')" >Failover DC</button> -->
+                    </div>
+                    
+                  </ng-scrollbar>
+             <!-- <app-sidenav> </app-sidenav> -->
         </div>
-        <div class="col-md-9 mt-5 shadow-sm p-3 mb-5 bg-body rounded" >
+        <div class="col-sm-9 mt-5 shadow-sm p-3 mb-5 bg-body rounded" >
                     <form class="row g-3  " [formGroup]="empGroup" (ngSubmit)="onSubmit(empGroup)">
                 <div class="col-md-6">
                     <label for="empcode" class="form-label">Emp Code</label>

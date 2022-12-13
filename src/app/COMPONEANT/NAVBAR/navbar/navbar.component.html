@@ -1,32 +1,44 @@
-<mat-toolbar class="sticky">
-  <!-- <span class=" nav-brand">RCV Innv.</span> -->
+<mat-toolbar class="sticky  shadow -sm bg-body rounded">
   <mat-toolbar-row fxLayoutAlign="space-between center">
     <div fxLayout.gt-lg="row">
-      <!-- Hari Edited here -->
-      <!-- <mat-icon class="home-icon">home</mat-icon> -->
-      <img
-        src="https://static.wixstatic.com/media/e1e56e_67277d4a9a144a8d8b56106ed26140f6~mv2.png/v1/fill/w_134,h_88,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7a1ff5_da3af2cb31944d6bbbf50f5ffeb103d5_.png"
-        alt="RCV">
-
-      <!-- <img src="../assets/images/sima.jpg" class="align-top" height="30"> -->
-      <!-- <span class="align-bottom"> RCV</span> -->
+      <img src="../../../../assets/img/cloud.jpeg" alt="RCV" class="shadow-sm bg-body rounded" (click)="navigate('home')">
     </div>
+    
     <div class="topnav" color="primary"*ngIf="!deviceXs" fxLayout="row">
-      <button  mat-button routerLink="home">Home</button>
-      <button mat-button [matMenuTriggerFor]="afterMenu" class="badge bg-primary  text-white text-wrap">People</button>
+      <button class="btn btn-outline-secondary"  mat-button routerLink="home">Home</button>
+      <button mat-button [matMenuTriggerFor]="afterMenu" class="badge btn btn-outline-secondary ">People</button>
       <mat-menu #afterMenu="matMenu" xPosition="after">
-        <button mat-menu-item  (click)="navigate('user')"> User</button>
+        <button mat-menu-item  (click)="navigate('People')"> User</button>
         <button mat-menu-item (click)="navigate('report')">Report</button>
       </mat-menu>
-      <button class="br" mat-button>Information Repositorys</button>
-      <button mat-button>Device</button>
-      <button mat-button [matMenuTriggerFor]="after">Applications & Services</button>
+      <button class="br btn btn-outline-secondary" mat-button>Information Repositorys</button>
+      <button class="btn btn-outline-secondary" mat-button>Device</button>
+      <button class="btn btn-outline-secondary" mat-button [matMenuTriggerFor]="after">Applications & Services</button>
       <mat-menu #after="matMenu" xPosition="after">
         <button mat-menu-item (click)="navigate('failureinfra')">Failover Infra </button>
         <button mat-menu-item (click)="navigate('monitorimfra')">Monitor Infra</button>
+        <button mat-menu-item (click)="navigate('failover')"> Failover</button>
       </mat-menu>
     </div>
   </mat-toolbar-row>
 </mat-toolbar>
 
 
+  <!-- <app-sidenav></app-sidenav> -->
+
+  <!-- <div class="reddit-body">
+    <div class="container">
+      <div class="row">
+        <hr />
+        <div class="col-md-9" >
+          
+          
+        </div>
+        <div class="col-md-3">
+        </div>
+      </div>
+    </div>
+  </div>
+      -->
+
+     

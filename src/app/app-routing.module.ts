@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FailoverComponent } from './COMPONEANT/failover/failover.component';
 import { FailureInfraComponent } from './COMPONEANT/failure-infra/failure-infra.component';
 import { HomeComponent } from './COMPONEANT/HOME/home/home.component';
 import { MonitorInfraComponent } from './COMPONEANT/monitor-infra/monitor-infra.component';
@@ -15,10 +16,11 @@ const routes: Routes = [
   {path:'reporting',component:ReportingComponent},
   {path:'failureinfra',component:FailureInfraComponent},
   {path:'monitorimfra',component:MonitorInfraComponent},
+  {path:'failover',component:FailoverComponent},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash:false})],
+  imports: [RouterModule.forRoot(routes,{useHash:true})],
 
   exports: [RouterModule]
 })

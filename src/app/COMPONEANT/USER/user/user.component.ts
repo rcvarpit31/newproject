@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { EmployeeModule } from 'src/app/MODEL/employee/employee.module';
 import { EmployeeService } from 'src/app/SERVICE/employee.service';
 // EmployeeModule
@@ -13,7 +14,7 @@ export class UserComponent implements OnInit {
   // empGroup = new FormGroup ({});
   emplmodel: EmployeeModule;
   employeeData: any;
-  constructor(private service: EmployeeService) {
+  constructor(private service: EmployeeService ,private router: Router) {
     this.emplmodel = new EmployeeModule();
   }
 
@@ -39,14 +40,14 @@ export class UserComponent implements OnInit {
   // }
 
   onSubmit(data: any) {
-    console.log(data.value);
+    console.log( "bsjsbkdcbskbcsnd:-"+ data.value.reportinto);
     const formdata = {
       empcode: data.value.empcode,
       employeename: data.value.employeename,
       mobileno: data.value.mobileno,
       designation: data.value.designation,
       email: data.value.email,
-      reportinto: data.value.reporting,
+      reportinto: data.value.reportinto,
       reason: data.value.reason,
       status: data.value.status
     }
@@ -76,6 +77,8 @@ export class UserComponent implements OnInit {
       console.log(err);
     })
   }
-
+  navigate(path:string){
+    this.router.navigate([path]);
+  }
 
 }

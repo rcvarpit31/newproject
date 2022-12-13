@@ -21,6 +21,10 @@ import { FailureInfraComponent } from './COMPONEANT/failure-infra/failure-infra.
 import { FooterComponent } from './COMPONEANT/footer/footer.component';
 import { SidenavComponent } from './COMPONEANT/sidenav/sidenav.component';
 import { NgScrollbarModule } from 'ngx-scrollbar';
+// import{MatDrawerContainer} from '@angular/material/'
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { FailoverComponent } from './COMPONEANT/failover/failover.component';
+
 
 
 @NgModule({
@@ -35,6 +39,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     FailureInfraComponent,
     FooterComponent,
     SidenavComponent,
+    FailoverComponent,
     
   ],
   imports: [
@@ -50,7 +55,7 @@ import { NgScrollbarModule } from 'ngx-scrollbar';
     MatMenuModule,
     MatButtonModule,
     NgScrollbarModule,
-
+    MatSidenavModule,
     
     
     

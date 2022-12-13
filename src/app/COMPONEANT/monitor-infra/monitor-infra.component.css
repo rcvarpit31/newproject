@@ -1,4 +1,52 @@
 .card{
-    margin-top: 80px;
+    margin-top: 10px;
     /* border-color: green; */
 }
+.as{
+    margin-top: 80px;
+    /* text-align-last: right; */
+}
+.error{
+    color: red;
+    border-color: red;
+}
+.success{
+    color: green;
+    border-color: green;
+}
+.warn {
+    color:#F9A602;
+    border-color: #F9A602;
+/* color:white; */
+    /* background-color: #ecab05; */
+}
+.kk{
+    margin-top: 70px;
+}
+
+.example-container {
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid #555;
+  }
+  .example-container {
+    width: 500px;
+    height: 300px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  
+  .example-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .example-sidenav {
+    padding: 20px;
+  }
+kk:hover{
+    /* color: #F9A602; */
+    background-color: red;
+  }

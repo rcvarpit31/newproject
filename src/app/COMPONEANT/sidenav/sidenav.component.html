@@ -1,22 +1,17 @@
-<ng-scrollbar style="height:300px;" class="kk ms-3 text-center  shadow-lg  
-bg-body rounded ">
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
-    <div><h4>jdfhkhd</h4></div>
 
-    
+<ng-scrollbar   scrollbar-thumb-hover-color:red
+ style="height:700px;" class="kk bg-secondary text-white ms-3 text-center  shadow-lg  
+bg-body rounded ">
+<div  class=" marigin fw-bolder text-uppercase">
+  <div *ngIf="isFalse">
+  <button class="btn bg-secondary text-white" (click)="navigate('People')">User</button> <br>
+  <button class="btn" (click)="navigate('People')">People</button>
+</div>
+  <div *ngIf="isTrue">
+      <button class="btn text-primary"  (click)="navigate('monitorimfra')"  >Monitor Infra</button>
+      <button class="btn text-primary" (click)="navigate('failureinfra')" >Failover Infra</button>
+      <button class="btn text-primary" (click)="navigate('failover')" >Failover</button>
+    </div>
+    </div>
     
   </ng-scrollbar>

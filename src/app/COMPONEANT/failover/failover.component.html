@@ -1,0 +1,60 @@
+ <div class="">
+    <div class="">
+      <div class="row">
+        <hr />
+        <div class="col-md-2 col-3" >
+          <ng-scrollbar  class="bg-secondary text-white" style="height:700px;" class=" top  shadow p-3 mb-5 bg-body rounded  ms-3 text-center text-white ">
+            <div  class=" marigin fw-bolder text-center  mt-4" >
+              <!-- <button class="btn bg-secondary text-white" (click)="navigate('People')">User</button> <br>
+              <button class="btn" (click)="navigate('People')">Report</button> -->
+             <button class="btn btn-outline-secondary  ps-5 mb-2" (click)="navigate('failover')" >Failover</button>
+             <br/>
+              <button class=" btn btn-outline-secondary ps-4 mb-2"(click)="navigate('monitorimfra')"  >Monitor DC</button>
+              <br/>
+              <button class="btn btn-outline-secondary ps-4 mb-2 " (click)="navigate('failureinfra')" >Failover DC</button>
+                </div>
+                
+              </ng-scrollbar>
+            <!-- <app-sidenav> </app-sidenav> -->
+        </div>
+        <div class="col-md-8 col-9">
+                <div class="card kk">
+                    <div class="card-header text-center fw-bold fs-5 ">
+                           Api Call
+                    </div>
+                    <div class="cared-body mt-5" style="height: 10rem;" >
+                        <button class="btn btn-primary  ms-3"  >Initiate Cloud Failover</button>
+                        <!-- <button class="btn btn-primary ms-5">Initiate Cloud Failover</button>
+                    </div>
+                </div> -->
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary ms-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop" 
+(click)="getResponse()"  >
+  Initiate local failover
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel"> Response from Api</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+           <div>Response: {{response.message}}</div>
+      </div>
+      <div class="modal-footer">  
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+        </div>
+        <div class="col-md-2" >
+          
+          
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,3 +1,18 @@
 .top{
     margin-top:200px;
 }
+
+.example-container {
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid #555;
+  }
+  
+  
+
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.marigin{
+    margin-top: 80px;
+}

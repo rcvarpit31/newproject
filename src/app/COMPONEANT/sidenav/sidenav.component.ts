@@ -8,13 +8,29 @@ import { Router } from '@angular/router';
   styleUrls: ['./sidenav.component.css']
 })
 export class SidenavComponent implements OnInit {
-
-  constructor( private router:Router) { }
+  isTrue:boolean=true;
+  isFalse :boolean=true;
+  root:any;
+  constructor( private router:Router) { 
+    // this.navigate('');
+  }
 
   ngOnInit(): void {
   }
 navigate(path:string){
   this.router.navigate([path]);
-}
+  console.log(path);
+  this.show(path);
+  }
+  
+   show(path:string){
+    if( path=='People'){
+      this.isTrue = false ;
+      this.isFalse =true ;
+    }else{
+      this.isTrue = true ;
+      this.isFalse =false ;
+   }
 
+  }
 }

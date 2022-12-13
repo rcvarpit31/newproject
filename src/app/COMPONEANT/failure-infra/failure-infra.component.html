@@ -12,26 +12,68 @@
         </div>
 
       </div> -->
-      <div>
-        <div class=" ">
-          <div class="row">
-            <div class="col-md-2" >
-              <app-sidenav></app-sidenav>
-            </div>
-            <div class="col-md-10">
-              <div class="top">
-                <div class="row">
-                    <div class="col-sm-2"*ngFor="let data of failoverInfradata"
-                    [ngStyle]="{'color':data.helth === 'ok' ? 'green' : 'red'}">
-                      <div class="card">
-                        <div class="card-header fs-6 text-bolder">
-                          {{data.appname}}<div class="text-end">{{data.helth}}</div> </div>
-                        <div class="card-body">
-                          <h5 class="card-title "> {{data.description}} </h5>
-                        </div>
-                      </div>
-                    </div>
+<div>
+  <div class=" ">
+    <div class="row">
+      <div class="col-md-2 col-3">
+        <ng-scrollbar  class="bg-secondary text-white" style="height:700px;" class="kk  shadow p-3 mb-5 bg-body rounded  ms-3 text-center text-white ">
+          <div  class=" marigin fw-bolder text-center  mt-4" >
+            <!-- <button class="btn bg-secondary text-white" (click)="navigate('People')">User</button> <br>
+            <button class="btn" (click)="navigate('People')">Report</button> -->
+           <button class="btn btn-outline-secondary  ps-5 mb-2" (click)="navigate('failover')" >Failover</button>
+           <br/>
+            <button class=" btn btn-outline-secondary ps-4 mb-2"(click)="navigate('monitorimfra')"  >Monitor DC</button>
+            <br/>
+            <button class="btn btn-outline-secondary ps-4 mb-2 " (click)="navigate('failureinfra')" >Failover DC</button>
+              </div>
+              
+            </ng-scrollbar>
+        <!-- <app-sidenav> </app-sidenav> -->
+      </div>
+      <div class="col-md-10 col-9">
+        <div class="top">
+          <button class="btn btn-primary as float-right" (click)="refresh()">Refresh</button>
+
+          <div class="row mt-3 ">
+
+            <div class="col-sm-2" *ngFor="let data of failoverInfradata" [ngClass]="getClassOf(data.helth)">
+              <div class="card">
+                <div class="card-header fs-7 text-bolder">
+                  {{data.appname}}
+                  <div class="text-end ">
+                    <img *ngIf="data.helth.toLowerCase()==='ok'&&'sucess'" src="../../../assets/img/ok.gif" style="height: 15px;"
+                      alt="">
+                    <img *ngIf="data.helth.toLowerCase()==='warning'" src="../../../assets/img/warning2.gif" style="height: 25px;"
+                      alt="">
+                    <img *ngIf="data.helth.toLowerCase()==='error'" src="../../../assets/img/error.gif" style="height: 20px;" alt="">
+                  </div>
+                </div>
+                <div class="card-body">
+                  <p class="card-title  "> {{data.description}} </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div>  
+          <table class="table  table-hover table-striped">
+            <thead>
+                <tr>
+                    <th class="col-md-2">APPLICATION</th>
+                    <th class="col-md-2">STATUS</th>
+                    <th class="col-md-10">DESCRIPTION</th>
+              
+                </tr>
+            </thead>
+            <tbody >
+                <tr *ngFor="let data of failoverInfrTask" >
+                    <th scope="row">{{data.appname}}</th>
+                    <td>{{data.helth}}</td>
+                    <td>{{data.description}}</td>
+                  
+                </tr>
+            </tbody>
+        </table>
+        </div>
       </div>
+    </div>

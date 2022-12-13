@@ -4,3 +4,20 @@
 .mr{
     margin-left: 85px;
 }
+
+.error{
+    color: red;
+    border-color: red;
+}
+.success{
+    color: green;
+    border-color: green;
+}
+.warn {
+    color:#F9A602;
+    border-color: #F9A602;
+/* color:white; */
+    /* background-color: #ecab05; */
+}
+
+.kk{margin-top: 70px;}

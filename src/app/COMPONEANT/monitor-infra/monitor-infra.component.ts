@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { EmployeeService } from 'src/app/SERVICE/employee.service';
 
 @Component({
@@ -7,23 +8,19 @@ import { EmployeeService } from 'src/app/SERVICE/employee.service';
   styleUrls: ['./monitor-infra.component.css']
 })
 export class MonitorInfraComponent implements OnInit {
+  showFiller = true; 
 
-  constructor(private service: EmployeeService) { 
+
+  constructor(private service: EmployeeService,private router :Router) {
     this.getAlldataFromMonitorInfra();
     console.log("this monitopr");
-    
+
   }
   monitorInfradata: any;
   ngOnInit(): void {
   }
-  // // get data from data base
-  // public getAllEmployeeData() {
-  //   this.service.getAll().subscribe(data => {
-  //     this.employeeData = data
-  //     // console.log(data);
-  //   },
-  //     error => { return this.employeeData = error })
-  // }
+
+
   // get  data from data MonitorInfra 
   public getAlldataFromMonitorInfra() {
     this.service.getAllMonitorInfra().subscribe(data => {
@@ -33,6 +30,29 @@ export class MonitorInfraComponent implements OnInit {
       return this.getAlldataFromMonitorInfra = error
     }
     )
+    setTimeout(() => {
+      this.getAlldataFromMonitorInfra()
+    }, 5000);
+  }
 
+public refresh (){
+   this.getAlldataFromMonitorInfra(); 
+}
+// get dynamic css
+getClassOf(helth:string) {
+  if (helth.toLowerCase() ==='ok'||helth.toLowerCase() === 'success') {
+    return 'success';
+  } else if (helth.toLowerCase()==='warning') {
+    return 'warn';
+  } else {
+    return 'error'
   }
 }
+
+navigate(path:string){
+  this.router.navigate([path]);
+}
+
+}
+
+
